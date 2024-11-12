@@ -38,8 +38,6 @@ fatores_atividade = {
     "Moderadamente ativo (exercício moderado 3 a 5 dias por semana)": 1.55,
     "Muito ativo (exercício intenso 6 a 7 dias por semana)": 1.725,
     "Extremamente ativo (exercício físico muito intenso ou trabalho físico)": 1.9
-}
-
         }
 
         gasto_total = tmb * fatores_atividade[nivel_atividade]
