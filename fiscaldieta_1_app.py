@@ -9,13 +9,14 @@ def calcular_tmb():
     peso = st.number_input("Qual é o seu peso em kg?", min_value=0.0, value=None, step=0.1)
     altura = st.number_input("Qual é a sua altura em cm?", min_value=0.0, value=None, step=0.1)
 
-    # Calcula a TMB com base no sexo
-    if sexo == 'Masculino':
-        tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade)
-    else:
-        tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade)
-
+    # Verifica se os campos necessários estão preenchidos
     if idade is not None and peso is not None and altura is not None:
+        # Calcula a TMB com base no sexo
+        if sexo == 'Masculino':
+            tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade)
+        else:
+            tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade)
+
         st.write(f"**Sua TMB é aproximadamente {tmb:.2f} calorias por dia.**")
 
         # Nível de atividade
@@ -49,5 +50,7 @@ def calcular_tmb():
             </div>
             """, unsafe_allow_html=True
         )
+    else:
+        st.write("Por favor, preencha todos os campos para calcular sua TMB e metas de dieta.")
 
 calcular_tmb()
