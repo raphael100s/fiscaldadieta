@@ -41,13 +41,13 @@ def calcular_tmb():
 
         # Exibindo metas em um quadro de destaque
         st.markdown(
-            f\"\"\"
+            f"""
             <div style="border: 2px solid #4CAF50; padding: 20px; border-radius: 10px; background-color: #E8F5E9;">
                 <h3 style="text-align: center;">Metas de Dieta</h3>
                 <p style="text-align: center; font-size: 20px;"><b>Meta calórica diária: {meta_calorias:.2f} calorias</b></p>
                 <p style="text-align: center; font-size: 20px;"><b>Meta diária em pontos: {meta_pontos:.2f} pontos</b></p>
             </div>
-            \"\"\", unsafe_allow_html=True
+            """, unsafe_allow_html=True
         )
 
 calcular_tmb()
