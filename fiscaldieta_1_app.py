@@ -19,25 +19,24 @@ def calcular_tmb():
 
         st.write(f"**Sua TMB é aproximadamente {tmb:.2f} calorias por dia.**")
 
-        # Nível de atividade
+        # Nível de atividade com legendas descritivas
         nivel_atividade = st.selectbox(
-    "Escolha o seu nível de atividade física:",
-    [
-        "Sedentário (pouco ou nenhum exercício)",
-        "Levemente ativo (exercício leve 1 a 3 dias por semana)",
-        "Moderadamente ativo (exercício moderado 3 a 5 dias por semana)",
-        "Muito ativo (exercício intenso 6 a 7 dias por semana)",
-        "Extremamente ativo (exercício físico muito intenso ou trabalho físico)"
-    ]
-)
+            "Escolha o seu nível de atividade física:",
+            [
+                "Sedentário (pouco ou nenhum exercício)",
+                "Levemente ativo (exercício leve 1 a 3 dias por semana)",
+                "Moderadamente ativo (exercício moderado 3 a 5 dias por semana)",
+                "Muito ativo (exercício intenso 6 a 7 dias por semana)",
+                "Extremamente ativo (exercício físico muito intenso ou trabalho físico)"
+            ]
+        )
 
-# Ajustar os fatores de atividade para corresponder às descrições acima
-fatores_atividade = {
-    "Sedentário (pouco ou nenhum exercício)": 1.2,
-    "Levemente ativo (exercício leve 1 a 3 dias por semana)": 1.375,
-    "Moderadamente ativo (exercício moderado 3 a 5 dias por semana)": 1.55,
-    "Muito ativo (exercício intenso 6 a 7 dias por semana)": 1.725,
-    "Extremamente ativo (exercício físico muito intenso ou trabalho físico)": 1.9
+        fatores_atividade = {
+            "Sedentário (pouco ou nenhum exercício)": 1.2,
+            "Levemente ativo (exercício leve 1 a 3 dias por semana)": 1.375,
+            "Moderadamente ativo (exercício moderado 3 a 5 dias por semana)": 1.55,
+            "Muito ativo (exercício intenso 6 a 7 dias por semana)": 1.725,
+            "Extremamente ativo (exercício físico muito intenso ou trabalho físico)": 1.9
         }
 
         gasto_total = tmb * fatores_atividade[nivel_atividade]
