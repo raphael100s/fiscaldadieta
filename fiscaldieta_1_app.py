@@ -40,15 +40,15 @@ def calcular_tmb():
         meta_calorias = max(gasto_total - 1000, 1000 if sexo == 'Feminino' else 1200)
         meta_pontos = meta_calorias / 3.6
 
-        # Exibindo metas em um quadro de destaque
+        # Exibindo metas em um quadro de destaque com fundo amarelo e texto preto
         st.markdown(
-            f"""
-            <div style="border: 2px solid #4CAF50; padding: 20px; border-radius: 10px; background-color: #E8F5E9;">
+            f'''
+            <div style="border: 2px solid #FFD700; padding: 20px; border-radius: 10px; background-color: #FFFFE0; color: black;">
                 <h3 style="text-align: center;">Metas de Dieta</h3>
                 <p style="text-align: center; font-size: 20px;"><b>Meta calórica diária: {meta_calorias:.2f} calorias</b></p>
                 <p style="text-align: center; font-size: 20px;"><b>Meta diária em pontos: {meta_pontos:.2f} pontos</b></p>
             </div>
-            """, unsafe_allow_html=True
+            ''', unsafe_allow_html=True
         )
     else:
         st.write("Por favor, preencha todos os campos para calcular sua TMB e metas de dieta.")
